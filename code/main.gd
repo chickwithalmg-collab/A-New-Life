@@ -41,17 +41,17 @@ var days = 0
 var afab = false
 var amab = false
 
-signal emailName1(name)
+signal email_name1(name)
 
 func _ready() -> void:
-	name1.text_submitted.connect(_on_LineEdit_text)
+	name1.text_submitted.connect(_on_lineEdit_text)
 	
 #var OriginName = Name.text
 	
-func _on_LineEdit_text(new_text) -> void: 
+func _on_lineEdit_text(new_text) -> void: 
 	name_confirmation.text = "Your name is:" + new_text
 	
-	emit_signal("EmailName1", name1.text)
+	emit_signal("email_name1", name1.text)
 
 func _on_of_legal_age_button_down() -> void:
 	disclaimer.visible = false

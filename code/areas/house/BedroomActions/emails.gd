@@ -16,8 +16,10 @@ func _process(delta: float) -> void:
 	pass
 
 
+
+
 func _on_main_email_name_1(name: Variant) -> void:
 	name1 += name
-	#print(name1 + " is my name")
+	print(name1 + " is my name")
 	email_title1.text = "From: WeedForLive \nTo: " + name1
 	email_title2.text = "From: DildoFactory \nTo: " + name1	

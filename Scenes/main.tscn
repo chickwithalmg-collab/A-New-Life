@@ -2,17 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bo6j6qiauuwkn" path="res://assets/sprites/bg_1/black_bg.png" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://b2rxmsv3db0qf" path="res://code/main.gd" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://ddmj2s82wrucv" path="res://assets/sprites/ui_1/arrow_1.png" id="4_1w6v2"]
 [ext_resource type="Texture2D" uid="uid://dl1wex2t0b77v" path="res://assets/sprites/ui_1/ui_bar.png" id="6_7mycd"]
-[ext_resource type="Texture2D" uid="uid://dt8ugmfng3n1w" path="res://assets/sprites/arrows.png" id="7_kek77"]
 [ext_resource type="Texture2D" uid="uid://df20fan6ir8c8" path="res://assets/sprites/ui_1/save_icon.png" id="8_4c57u"]
 [ext_resource type="FontFile" uid="uid://b3vssdigv3x12" path="res://assets/fonts_2/b612_mono_regular.ttf" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://5h2x1c4khagw" path="res://assets/sprites/ui_1/restart_icon.png" id="9_efxa6"]
 [ext_resource type="VideoStream" uid="uid://dmp04118i84kw" path="res://assets/videos_2/rick_roll_video_meme_template_video_1da252ec.ogv" id="9_kek77"]
-[ext_resource type="Texture2D" uid="uid://dsisximf2yhn3" path="res://icon.svg" id="10_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dsisximf2yhn3" path="res://assets/sprites/icon.svg" id="10_4c57u"]
 [ext_resource type="Texture2D" uid="uid://bjsqp2aktmfqj" path="res://assets/sprites/ui_1/female_symbol.png" id="10_efxa6"]
 [ext_resource type="Texture2D" uid="uid://na5qrgwnqtmo" path="res://assets/sprites/ui_1/male_symbol.png" id="11_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bn0ypsb357jqt" path="res://assets/sprites/places_1/house_1/single_bedroom.jpg" id="12_dg77c"]
-[ext_resource type="Script" uid="uid://d4ieoablcuowv" path="res://Code/areas_2/areas_1.gd" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://d4ieoablcuowv" path="res://code/areas_2/areas_1.gd" id="12_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://d2ycvmrmovoq0" path="res://assets/sprites/places_1/house_1/bathroom_1.jpg" id="14_w48qg"]
 [ext_resource type="Texture2D" uid="uid://ch024dts56df3" path="res://assets/sprites/places_1/house_1/streaming_studio.jpg" id="15_0odxb"]
 [ext_resource type="Texture2D" uid="uid://ci28eijw5clh8" path="res://assets/sprites/places_1/house_1/pc_screen.webp" id="15_82xsv"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cdekpddwjvo7h" path="res://assets/sprites/places_1/house_1/living_room.jpg" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://blwn10wsr7v3k" path="res://assets/sprites/places_1/house_1/porn_stream.webp" id="17_lswn8"]
 [ext_resource type="Texture2D" uid="uid://bknodmxhmj01k" path="res://assets/sprites/places_1/house_1/foyer_1.png" id="17_yaehf"]
-[ext_resource type="Script" uid="uid://dhchjtj64r2hx" path="res://code/areas/emails.gd" id="18_a6jrf"]
+[ext_resource type="Script" uid="uid://dhchjtj64r2hx" path="res://code/areas/house/BedroomActions/emails.gd" id="18_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://jnbeax52n355" path="res://Scenes/slot.tscn" id="21_getpj"]
 [ext_resource type="Script" uid="uid://5pwmeb5nqcb2" path="res://code/ui/inventory_ui.gd" id="21_ryguw"]
 [ext_resource type="Script" uid="uid://d3law1db002cd" path="res://code/ui/inventory.gd" id="23_d13ii"]
@@ -99,7 +99,7 @@ offset_left = 4.3026195
 offset_top = 7.06318
 offset_right = 44.30262
 offset_bottom = 47.06318
-texture = ExtResource("7_kek77")
+texture = ExtResource("4_1w6v2")
 expand_mode = 1
 
 [node name="Forward" type="Button" parent="LeftUIBar/GridContainer/VFlowContainer2" unique_id=1599670544]
@@ -113,7 +113,7 @@ offset_left = 4.3026195
 offset_top = 7.06318
 offset_right = 44.30262
 offset_bottom = 47.06318
-texture = ExtResource("7_kek77")
+texture = ExtResource("4_1w6v2")
 expand_mode = 1
 flip_h = true
 
@@ -383,7 +383,7 @@ layout_mode = 0
 offset_left = 133.41562
 offset_top = 73.24074
 offset_right = 508.25
-offset_bottom = 349.99994
+offset_bottom = 530.8333
 theme = SubResource("Theme_5vw27")
 
 [node name="Control" type="Control" parent="Game" unique_id=1183575468]
@@ -571,11 +571,15 @@ offset_bottom = 437.3889
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start Game"
 
-[node name="Areas" type="Node2D" parent="Game/Control" unique_id=1380009074 node_paths=PackedStringArray("scrollbar", "single_bedroom", "streaming", "videogames", "email", "bathroom", "kitchen", "living_room", "foyer", "house_buttons", "computer", "notepad", "wardrobe", "mirror", "trophycase")]
+[node name="Areas" type="Node2D" parent="Game/Control" unique_id=1380009074 node_paths=PackedStringArray("scrollbar", "single_bedroom", "streaming", "gaming_stream", "camshow", "gaming_stream2", "camshow2", "videogames", "email", "bathroom", "kitchen", "living_room", "foyer", "house_buttons", "computer", "notepad", "wardrobe", "mirror", "trophycase")]
 script = ExtResource("12_ycdy4")
 scrollbar = NodePath("../..")
 single_bedroom = NodePath("House/SingleBedroomButtons")
 streaming = NodePath("House/BedroomActions/ComputerActions/Streaming")
+gaming_stream = NodePath("House/BedroomActions/ComputerActions/GamingStream")
+camshow = NodePath("House/BedroomActions/ComputerActions/Camshow")
+gaming_stream2 = NodePath("House/BedroomActions/ComputerActions/GamingStream2")
+camshow2 = NodePath("House/BedroomActions/ComputerActions/Camshow2")
 videogames = NodePath("House/BedroomActions/ComputerActions/VideoGames")
 email = NodePath("House/BedroomActions/ComputerActions/Emails")
 bathroom = NodePath("House/BathroomButtons")
@@ -943,14 +947,14 @@ offset_bottom = 638.62036
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_0odxb")
 
-[node name="Gaming" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1935960469]
+[node name="GamingStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1935960469]
 layout_mode = 0
 offset_left = 105.99687
 offset_top = 205.78705
 offset_right = 201.99689
 offset_bottom = 236.78705
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Stream yourself"
+text = "Start Gaming Stream"
 
 [node name="Camshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1537327481]
 layout_mode = 0
@@ -999,6 +1003,45 @@ offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
+[node name="GamingStream2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=777732281]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You greet your fans and start
+playing enthusastically while
+talking withg the chat"
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2" unique_id=2113398223]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 944.29376
+offset_bottom = 638.62036
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_d13ii")
+
+[node name="GStreamText" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2" unique_id=1865877133]
+layout_mode = 0
+offset_left = -1.04904175e-05
+offset_top = 201.57408
+offset_right = 219.99998
+offset_bottom = 250.57408
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Placeholder         Placeholdr        Placeholder
+Something about what u play and  stuff"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2" unique_id=705019867]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
+
 [node name="Camshow" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=763728862]
 visible = false
 offset_left = 19.728134
@@ -1019,7 +1062,7 @@ offset_bottom = 1150.6204
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("17_lswn8")
 
-[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=186048510]
+[node name="StartCamshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=186048510]
 layout_mode = 0
 offset_left = 105.99687
 offset_top = 205.78705
@@ -1029,6 +1072,43 @@ theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start the Show"
 
 [node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=1050383463]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
+
+[node name="Camshow2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1543531557]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You turn on the camera and begin
+performing for the camera"
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2" unique_id=663508319]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 2014.2937
+offset_bottom = 1150.6204
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_lswn8")
+
+[node name="ShowText" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2" unique_id=1322209162]
+layout_mode = 0
+offset_top = 201.57408
+offset_right = 298.0
+offset_bottom = 232.57408
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Placeholder         Placeholdr        Placeholder
+Something about your perfmance/what u do"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2" unique_id=1934703587]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -1724,6 +1804,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Buy Camera"
 
+[connection signal="email_name1" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails" method="_on_main_email_name_1"]
 [connection signal="button_down" from="UpperUIBar/GridContainer/Inventory" to="." method="_on_inventory_button_down"]
 [connection signal="button_down" from="UpperUIBar/ExitInventory" to="." method="_on_exit_inventory_button_down"]
 [connection signal="button_down" from="Game/Control/Intro/Disclaimer/Of legal age" to="." method="_on_of_legal_age_button_down"]
@@ -1748,4 +1829,13 @@ text = "Buy Camera"
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Stream" to="Game/Control/Areas" method="_on_stream_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/VideoGames" to="Game/Control/Areas" method="_on_video_games_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Emails" to="Game/Control/Areas" method="_on_emails_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming/GamingStream" to="Game/Control/Areas" method="_on_gaming_stream_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming/Camshow" to="Game/Control/Areas" method="_on_camshow_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream/StartStream" to="Game/Control/Areas" method="_on_start_stream_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow/StartCamshow" to="Game/Control/Areas" method="_on_start_camshow_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="cameras" from="Game/Control/InventoryUI/MyInventory" to="Game/Control/Areas" method="_on_my_inventory_cameras"]
 [connection signal="button_down" from="Game/Control/InventoryUI/MyInventory/TestCameraButton" to="Game/Control/InventoryUI/MyInventory" method="_on_test_camera_button_button_down"]

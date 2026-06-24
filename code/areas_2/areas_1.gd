@@ -4,6 +4,11 @@ extends Node2D
 
 @export var single_bedroom: Label
 @export var streaming: Label
+@export var gaming_stream: Label
+@export var camshow: Label
+@export var gaming_stream2: Label
+@export var camshow2: Label
+
 @export var videogames: Label
 @export var email: Label
 @export var porn: Label
@@ -25,7 +30,7 @@ extends Node2D
 
 #@export var Inventory: GridContainer
 var camera_number = 0
-
+var email_name = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -128,6 +133,7 @@ func _on_trophycase_button_down() -> void:
 func _on_my_inventory_cameras(value: Variant) -> void:
 	camera_number += value
 	print(camera_number)
+	
 func _on_stream_button_down() -> void:
 	if (camera_number >= 1):
 		streaming.visible = true
@@ -139,15 +145,41 @@ func _on_stream_button_down() -> void:
 		computer.visible = true
 
 
-	
-	
+func _on_gaming_stream_button_down() -> void:
+	gaming_stream.visible = true
+	streaming.visible = false
+	scrollbar.scroll_vertical = 0
 
+func _on_camshow_button_down() -> void:
+	camshow.visible = true
+	streaming.visible = false
+	scrollbar.scroll_vertical = 0	
+
+func _on_start_stream_button_down() -> void:
+	gaming_stream.visible = false
+	gaming_stream2.visible = true
+	scrollbar.scroll_vertical = 0	
+
+func _on_start_camshow_button_down() -> void:
+	camshow.visible = false
+	camshow2.visible = true
+	scrollbar.scroll_vertical = 0	
+
+func _on_go_back_to_desktop_button_down() -> void:
+	gaming_stream.visible = false
+	camshow.visible = false
+	gaming_stream2.visible = false
+	camshow2.visible = false
+	computer.visible = true
+	scrollbar.scroll_vertical = 0	
 
 func _on_video_games_button_down() -> void:
 	pass # Replace with function body.
-
 
 func _on_emails_button_down() -> void:
 	email.visible = true
 	computer.visible = false
 	scrollbar.scroll_vertical = 0
+	
+
+	
