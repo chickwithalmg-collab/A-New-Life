@@ -393,6 +393,7 @@ layout_mode = 2
 [node name="Intro" type="Node2D" parent="Game/Control" unique_id=1196246308]
 
 [node name="Disclaimer" type="Label" parent="Game/Control/Intro" unique_id=1029099582]
+visible = false
 offset_left = 9.028124
 offset_top = 76.15741
 offset_right = 374.02814
@@ -575,13 +576,13 @@ text = "Start Game"
 script = ExtResource("12_ycdy4")
 scrollbar = NodePath("../..")
 single_bedroom = NodePath("House/SingleBedroomButtons")
-streaming = NodePath("House/BedroomActions/ComputerActions/Streaming")
-gaming_stream = NodePath("House/BedroomActions/ComputerActions/GamingStream")
-camshow = NodePath("House/BedroomActions/ComputerActions/Camshow")
-gaming_stream2 = NodePath("House/BedroomActions/ComputerActions/GamingStream2")
-camshow2 = NodePath("House/BedroomActions/ComputerActions/Camshow2")
+streaming = NodePath("House/BedroomActions/ComputerActions/StreamingActions/Streaming")
+gaming_stream = NodePath("House/BedroomActions/ComputerActions/StreamingActions/GamingStream")
+camshow = NodePath("House/BedroomActions/ComputerActions/StreamingActions/Camshow")
+gaming_stream2 = NodePath("House/BedroomActions/ComputerActions/StreamingActions/GamingStream2")
+camshow2 = NodePath("House/BedroomActions/ComputerActions/StreamingActions/Camshow2")
 videogames = NodePath("House/BedroomActions/ComputerActions/VideoGames")
-email = NodePath("House/BedroomActions/ComputerActions/Emails")
+email = NodePath("House/BedroomActions/ComputerActions/EmailActions/Emails")
 bathroom = NodePath("House/BathroomButtons")
 kitchen = NodePath("House/KitchenButtons")
 living_room = NodePath("House/LivingRoomButtons")
@@ -927,7 +928,9 @@ text = "Start Game"
 
 [node name="ComputerActions" type="Node2D" parent="Game/Control/Areas/House/BedroomActions" unique_id=22773069]
 
-[node name="Streaming" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1871299090]
+[node name="StreamingActions" type="Node2D" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1078016295]
+
+[node name="Streaming" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions" unique_id=1871299090]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -938,7 +941,7 @@ text = "You set up your camera and begin
 to think about what you wanna 
 stream for your fans today"
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=2529872]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming" unique_id=2529872]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 71.62038
@@ -947,7 +950,7 @@ offset_bottom = 638.62036
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_0odxb")
 
-[node name="GamingStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1935960469]
+[node name="GamingStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming" unique_id=1935960469]
 layout_mode = 0
 offset_left = 105.99687
 offset_top = 205.78705
@@ -956,7 +959,7 @@ offset_bottom = 236.78705
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start Gaming Stream"
 
-[node name="Camshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1537327481]
+[node name="Camshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming" unique_id=1537327481]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -965,7 +968,7 @@ offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start Camshow"
 
-[node name="GamingStream" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1924742227]
+[node name="GamingStream" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions" unique_id=1924742227]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -976,7 +979,7 @@ text = "You boot up your favourite game
 and prepare yourself to have a
 cozy gaming stream with fans."
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream" unique_id=2018720600]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream" unique_id=2018720600]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 71.62038
@@ -985,7 +988,7 @@ offset_bottom = 638.62036
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_d13ii")
 
-[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream" unique_id=1458770898]
+[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream" unique_id=1458770898]
 layout_mode = 0
 offset_left = 105.99687
 offset_top = 205.78705
@@ -994,7 +997,7 @@ offset_bottom = 236.78705
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start the Stream"
 
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream" unique_id=1084987325]
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream" unique_id=1084987325]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -1003,7 +1006,7 @@ offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
-[node name="GamingStream2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=777732281]
+[node name="GamingStream2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions" unique_id=777732281]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -1014,7 +1017,7 @@ text = "You greet your fans and start
 playing enthusastically while
 talking withg the chat"
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2" unique_id=2113398223]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream2" unique_id=2113398223]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 71.62038
@@ -1023,7 +1026,7 @@ offset_bottom = 638.62036
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_d13ii")
 
-[node name="GStreamText" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2" unique_id=1865877133]
+[node name="GStreamText" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream2" unique_id=1865877133]
 layout_mode = 0
 offset_left = -1.04904175e-05
 offset_top = 201.57408
@@ -1033,7 +1036,7 @@ theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Placeholder         Placeholdr        Placeholder
 Something about what u play and  stuff"
 
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2" unique_id=705019867]
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream2" unique_id=705019867]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -1042,7 +1045,7 @@ offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
-[node name="Camshow" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=763728862]
+[node name="Camshow" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions" unique_id=763728862]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -1053,7 +1056,7 @@ text = "You strike a sexy pose and begin
 to think of all the naughty 
 things you could do on camera."
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=1460018659]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow" unique_id=1460018659]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 71.62038
@@ -1062,7 +1065,7 @@ offset_bottom = 1150.6204
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("17_lswn8")
 
-[node name="StartCamshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=186048510]
+[node name="StartCamshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow" unique_id=186048510]
 layout_mode = 0
 offset_left = 105.99687
 offset_top = 205.78705
@@ -1071,7 +1074,7 @@ offset_bottom = 236.78705
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start the Show"
 
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=1050383463]
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow" unique_id=1050383463]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -1080,7 +1083,7 @@ offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
-[node name="Camshow2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1543531557]
+[node name="Camshow2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions" unique_id=1543531557]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -1090,7 +1093,7 @@ theme_override_fonts/font = ExtResource("8_5vw27")
 text = "You turn on the camera and begin
 performing for the camera"
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2" unique_id=663508319]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow2" unique_id=663508319]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 71.62038
@@ -1099,7 +1102,7 @@ offset_bottom = 1150.6204
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("17_lswn8")
 
-[node name="ShowText" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2" unique_id=1322209162]
+[node name="ShowText" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow2" unique_id=1322209162]
 layout_mode = 0
 offset_top = 201.57408
 offset_right = 298.0
@@ -1108,7 +1111,7 @@ theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Placeholder         Placeholdr        Placeholder
 Something about your perfmance/what u do"
 
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2" unique_id=1934703587]
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow2" unique_id=1934703587]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -1118,15 +1121,14 @@ theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
 [node name="VideoGames" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=954355378]
-visible = false
 offset_left = 19.728134
 offset_top = 76.15739
 offset_right = 352.72815
 offset_bottom = 529.8611
 theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You boot up your favourite game 
-and prepare yourself to have a
-cozy gaming stream with fans."
+text = "You boot up your favourite cozy 
+game 
+and start playing a few rounds "
 
 [node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=1517430374]
 layout_mode = 0
@@ -1137,25 +1139,28 @@ offset_bottom = 638.62036
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_d13ii")
 
-[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=285228387]
+[node name="StartStream" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=1096615884]
 layout_mode = 0
-offset_left = 105.99687
-offset_top = 205.78705
-offset_right = 201.99689
-offset_bottom = 236.78705
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Start the Stream"
+offset_left = -1.0204315e-05
+offset_top = 201.57408
+offset_right = 240.99998
+offset_bottom = 276.5741
+text = "You're talking wih your friends 
+over Kisscord while playing 
+your silly game"
 
 [node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=1425717447]
 layout_mode = 0
-offset_left = 105.99686
-offset_top = 249.21295
-offset_right = 201.99686
-offset_bottom = 280.21295
+offset_left = 94.29373
+offset_top = 298.14816
+offset_right = 228.29373
+offset_bottom = 329.14816
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
-[node name="Emails" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1774917411 node_paths=PackedStringArray("email_title1", "email_title2")]
+[node name="EmailActions" type="Node2D" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=826723156]
+
+[node name="Emails" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions" unique_id=1774917411 node_paths=PackedStringArray("computer", "email_app", "scrollbar", "email_title1", "email_title2", "delete_email1", "delete_email2", "email1", "email2")]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -1166,10 +1171,17 @@ text = "You look through your emails.
 It's like always mostly promo and
 spam mails."
 script = ExtResource("18_a6jrf")
-email_title1 = NodePath("HBoxContainer/Title")
-email_title2 = NodePath("HBoxContainer/Title2")
+computer = NodePath("../../../ComputerButtons")
+email_app = NodePath(".")
+scrollbar = NodePath("../../../../../../..")
+email_title1 = NodePath("HBoxContainer/SpamMail1")
+email_title2 = NodePath("HBoxContainer/SpamMail2")
+delete_email1 = NodePath("HBoxContainer/DeleteSpam1")
+delete_email2 = NodePath("HBoxContainer/DeleteSpam2")
+email1 = NodePath("../Spam1")
+email2 = NodePath("../Spam2")
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails" unique_id=1574162071]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" unique_id=1574162071]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 71.62038
@@ -1178,32 +1190,80 @@ offset_bottom = 732.62036
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("16_1u8w0")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails" unique_id=991367334]
+[node name="HBoxContainer" type="VBoxContainer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" unique_id=991367334]
 layout_mode = 0
 offset_left = 4.6812396
 offset_top = 208.37964
 offset_right = 333.0375
 offset_bottom = 322.37964
 
-[node name="Title" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1134173431]
+[node name="SpamMail1" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer" unique_id=924821662]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_5vw27")
 text = "From: WeedForLive To: "
 
-[node name="Open" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1746026792]
+[node name="DeleteSpam1" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer" unique_id=1746026792]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Stream yourself"
+text = "[Delete Above] "
 
-[node name="Title2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1470469672]
+[node name="SpamMail2" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer" unique_id=1978409974]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_5vw27")
 text = "From: WeedForLive To: "
 
-[node name="Open2" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1899388234]
+[node name="DeleteSpam2" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer" unique_id=1899388234]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Play Videogames"
+text = "[Delete Above]"
+
+[node name="Spam1" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions" unique_id=1277156862]
+visible = false
+offset_left = 19.728123
+offset_top = 76.157394
+offset_right = 352.72812
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "Hello dear patron of the botanic 
+arts. Are you interested in a 
+mind enhancing experience?
+Say no more! Just click this very
+trustworthy link below to 
+experience things you've never 
+seen before"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Spam1" unique_id=2026241128]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
+
+[node name="Spam2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions" unique_id=194541788]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "Greetings, dearest connoisseur 
+of bodily pleasures.
+If this email reached you it
+means you're one of our chosen
+few to receive a massive 40%
+discount on your next purchase
+at DildoFactory!"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Spam2" unique_id=2073945984]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
 
 [node name="BathroomButtons" type="Label" parent="Game/Control/Areas/House" unique_id=1000462653]
 visible = false
@@ -1804,7 +1864,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Buy Camera"
 
-[connection signal="email_name1" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails" method="_on_main_email_name_1"]
+[connection signal="email_name1" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_main_email_name_1"]
 [connection signal="button_down" from="UpperUIBar/GridContainer/Inventory" to="." method="_on_inventory_button_down"]
 [connection signal="button_down" from="UpperUIBar/ExitInventory" to="." method="_on_exit_inventory_button_down"]
 [connection signal="button_down" from="Game/Control/Intro/Disclaimer/Of legal age" to="." method="_on_of_legal_age_button_down"]
@@ -1829,13 +1889,20 @@ text = "Buy Camera"
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Stream" to="Game/Control/Areas" method="_on_stream_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/VideoGames" to="Game/Control/Areas" method="_on_video_games_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Emails" to="Game/Control/Areas" method="_on_emails_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming/GamingStream" to="Game/Control/Areas" method="_on_gaming_stream_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming/Camshow" to="Game/Control/Areas" method="_on_camshow_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream/StartStream" to="Game/Control/Areas" method="_on_start_stream_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream2/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow/StartCamshow" to="Game/Control/Areas" method="_on_start_camshow_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow2/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming/GamingStream" to="Game/Control/Areas" method="_on_gaming_stream_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming/Camshow" to="Game/Control/Areas" method="_on_camshow_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream/StartStream" to="Game/Control/Areas" method="_on_start_stream_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream2/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow/StartCamshow" to="Game/Control/Areas" method="_on_start_camshow_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Camshow2/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames/GoBackToDesktop" to="Game/Control/Areas" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer/SpamMail1" to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_spam_mail_1_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer/DeleteSpam1" to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_delete_spam_1_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer/SpamMail2" to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_spam_mail_2_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails/HBoxContainer/DeleteSpam2" to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_delete_spam_2_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Spam1/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Spam2/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_go_back_to_desktop_button_down"]
 [connection signal="cameras" from="Game/Control/InventoryUI/MyInventory" to="Game/Control/Areas" method="_on_my_inventory_cameras"]
 [connection signal="button_down" from="Game/Control/InventoryUI/MyInventory/TestCameraButton" to="Game/Control/InventoryUI/MyInventory" method="_on_test_camera_button_button_down"]

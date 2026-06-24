@@ -3,6 +3,7 @@ extends Node2D
 @export var scrollbar: ScrollContainer
 
 @export var single_bedroom: Label
+
 @export var streaming: Label
 @export var gaming_stream: Label
 @export var camshow: Label
@@ -170,6 +171,7 @@ func _on_go_back_to_desktop_button_down() -> void:
 	camshow.visible = false
 	gaming_stream2.visible = false
 	camshow2.visible = false
+	videogames.visible = false
 	computer.visible = true
 	scrollbar.scroll_vertical = 0	
 
