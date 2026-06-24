@@ -2,17 +2,20 @@ extends Node2D
 
 @export var scrollbar: ScrollContainer
 
-@export var singleBedroom: Label
+@export var single_bedroom: Label
 @export var streaming: Label
+@export var videogames: Label
 @export var email: Label
+@export var porn: Label
+@export var hypno: Label
 
 
 @export var bathroom: Label
 @export var kitchen: Label
-@export var livingRoom: Label
+@export var living_room: Label
 @export var foyer: Label
 
-@export var houseButtons: Label
+@export var house_buttons: Label
 #BedroomButtons
 @export var computer: Label
 @export var notepad: Label
@@ -21,7 +24,7 @@ extends Node2D
 @export var trophycase: Label
 
 #@export var Inventory: GridContainer
-var CameraNumber = 0
+var camera_number = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,43 +38,43 @@ func _process(delta: float) -> void:
 #Roons in House-----------------
 
 func _on_bathroom_button_down() -> void:
-	singleBedroom.visible = false
+	single_bedroom.visible = false
 	bathroom.visible = true
 	kitchen.visible = false
-	livingRoom.visible = false
+	living_room.visible = false
 	foyer.visible = false
 	scrollbar.scroll_vertical = 0
 
 
 func _on_kitchen_button_down() -> void:
-	singleBedroom.visible = false
+	single_bedroom.visible = false
 	bathroom.visible = false
 	kitchen.visible = true
-	livingRoom.visible = false
+	living_room.visible = false
 	foyer.visible = false
 	scrollbar.scroll_vertical = 0
 
 func _on_living_room_button_down() -> void:
-	singleBedroom.visible = false
+	single_bedroom.visible = false
 	bathroom.visible = false
 	kitchen.visible = false
-	livingRoom.visible = true
+	living_room.visible = true
 	foyer.visible = false
 	scrollbar.scroll_vertical = 0
 
 func _on_foyer_button_down() -> void:
-	singleBedroom.visible = false
+	single_bedroom.visible = false
 	bathroom.visible = false
 	kitchen.visible = false
-	livingRoom.visible = false
+	living_room.visible = false
 	foyer.visible = true
 	scrollbar.scroll_vertical = 0
 
 func _on_single_bedroom_button_down() -> void:
-	singleBedroom.visible = true
+	single_bedroom.visible = true
 	bathroom.visible = false
 	kitchen.visible = false
-	livingRoom.visible = false
+	living_room.visible = false
 	foyer.visible = false
 	scrollbar.scroll_vertical = 0
 
@@ -81,46 +84,52 @@ func _on_single_bedroom_button_down() -> void:
 	mirror
 	trophycase
 
+#Areas in Computer
+	streaming
+	videogames
+	email
+	porn
+	hypno
 
 func _on_computer_button_down() -> void:
 	computer.visible = true
-	singleBedroom.visible = false
-	houseButtons.visible = false
+	single_bedroom.visible = false
+	house_buttons.visible = false
 	scrollbar.scroll_vertical = 0
 
 
 func _on_notepad_button_down() -> void:
 	notepad.visible = true
-	singleBedroom.visible = false
-	houseButtons.visible = false
+	single_bedroom.visible = false
+	house_buttons.visible = false
 	scrollbar.scroll_vertical = 0
 
 
 func _on_wardrobe_button_down() -> void:
 	wardrobe.visible = true
-	singleBedroom.visible = false
-	houseButtons.visible = false
+	single_bedroom.visible = false
+	house_buttons.visible = false
 	scrollbar.scroll_vertical = 0
 
 
 func _on_mirror_button_down() -> void:
 	mirror.visible = true
-	singleBedroom.visible = false
-	houseButtons.visible = false
+	single_bedroom.visible = false
+	house_buttons.visible = false
 	scrollbar.scroll_vertical = 0
 
 
 func _on_trophycase_button_down() -> void:
 	trophycase.visible = true
-	singleBedroom.visible = false
-	houseButtons.visible = false
+	single_bedroom.visible = false
+	house_buttons.visible = false
 	scrollbar.scroll_vertical = 0
 
 func _on_my_inventory_cameras(value: Variant) -> void:
-	CameraNumber += value
-	print(CameraNumber)
+	camera_number += value
+	print(camera_number)
 func _on_stream_button_down() -> void:
-	if (CameraNumber >= 1):
+	if (camera_number >= 1):
 		streaming.visible = true
 		computer.visible = false
 		scrollbar.scroll_vertical = 0

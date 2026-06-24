@@ -23,10 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://cdekpddwjvo7h" path="res://assets/sprites/places_1/house_1/living_room.jpg" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://blwn10wsr7v3k" path="res://assets/sprites/places_1/house_1/porn_stream.webp" id="17_lswn8"]
 [ext_resource type="Texture2D" uid="uid://bknodmxhmj01k" path="res://assets/sprites/places_1/house_1/foyer_1.png" id="17_yaehf"]
-[ext_resource type="Script" uid="uid://dhchjtj64r2hx" path="res://emails.gd" id="18_a6jrf"]
-[ext_resource type="PackedScene" uid="uid://jnbeax52n355" path="res://slot.tscn" id="21_getpj"]
-[ext_resource type="Script" uid="uid://5pwmeb5nqcb2" path="res://inventory_ui.gd" id="21_ryguw"]
-[ext_resource type="Script" uid="uid://d3law1db002cd" path="res://inventory.gd" id="23_d13ii"]
+[ext_resource type="Script" uid="uid://dhchjtj64r2hx" path="res://code/areas/emails.gd" id="18_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://jnbeax52n355" path="res://Scenes/slot.tscn" id="21_getpj"]
+[ext_resource type="Script" uid="uid://5pwmeb5nqcb2" path="res://code/ui/inventory_ui.gd" id="21_ryguw"]
+[ext_resource type="Script" uid="uid://d3law1db002cd" path="res://code/ui/inventory.gd" id="23_d13ii"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0.6, 0, 0.6, 1)
@@ -38,7 +38,7 @@ bg_color = Color(0.6, 0, 0.6, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryguw"]
 
-[node name="Main" type="TextureRect" unique_id=161926023 node_paths=PackedStringArray("FemStat", "MascStat", "HornyStat", "HeteroStat", "HomoStat", "MoneyStat", "MonthlyExpensesStat", "Day", "WeekDay", "TimeOfDay", "Inventory", "ExitInventory", "Scrollbar", "Disclaimer", "IntroOptions", "Intro", "Mirror", "SingleBedroom", "Film", "GenderChocie", "name1", "NameConfirmation")]
+[node name="Main" type="TextureRect" unique_id=161926023 node_paths=PackedStringArray("fem_stat", "masc_stat", "horny_stat", "hetero_stat", "homo_stat", "money_stat", "monthly_expenses_stat", "day", "week_day", "time_of_day", "inventory", "exit_inventory", "scrollbar", "disclaimer", "intro_options", "intro", "single_bedroom", "house_buttons", "rick_roll", "gender_chocie", "name1", "name_confirmation", "demo_scene")]
 offset_right = 641.33124
 offset_bottom = 349.99997
 scale = Vector2(2.9906542, 3.0857143)
@@ -46,28 +46,29 @@ texture = ExtResource("1_5vw27")
 expand_mode = 1
 stretch_mode = 1
 script = ExtResource("2_h2yge")
-FemStat = NodePath("LeftUIBar/GridContainer/HFlowContainer/FemStat")
-MascStat = NodePath("LeftUIBar/GridContainer/HFlowContainer/MascStat")
-HornyStat = NodePath("LeftUIBar/GridContainer/HFlowContainer/HornyStat")
-HeteroStat = NodePath("LeftUIBar/GridContainer/HFlowContainer/Heterostat")
-HomoStat = NodePath("LeftUIBar/GridContainer/HFlowContainer/Homostat")
-MoneyStat = NodePath("RightUIBar/VFlowContainer/Money")
-MonthlyExpensesStat = NodePath("RightUIBar/VFlowContainer/MonthExpens")
-Day = NodePath("RightUIBar/VFlowContainer/Day")
-WeekDay = NodePath("RightUIBar/VFlowContainer/WeekDay")
-TimeOfDay = NodePath("RightUIBar/VFlowContainer/TimeOfDay")
-Inventory = NodePath("Game/Control/InventoryUI")
-ExitInventory = NodePath("UpperUIBar/ExitInventory")
-Scrollbar = NodePath("Game")
-Disclaimer = NodePath("Game/Control/Intro/Disclaimer")
-IntroOptions = NodePath("Game/Control/Intro/IntroOptions")
-Intro = NodePath("Game/Control/Intro/Intro")
-Mirror = NodePath("Game/Control/Areas/House/BedroomActions/ComputerButtons")
-SingleBedroom = NodePath("Game/Control/Areas/House/SingleBedroomButtons")
-Film = NodePath("Game/Control/Intro/Disclaimer/VideoStreamPlayer")
-GenderChocie = NodePath("Game/Control/Intro/IntroOptions/GenderChoice")
+fem_stat = NodePath("LeftUIBar/GridContainer/HFlowContainer/FemStat")
+masc_stat = NodePath("LeftUIBar/GridContainer/HFlowContainer/MascStat")
+horny_stat = NodePath("LeftUIBar/GridContainer/HFlowContainer/HornyStat")
+hetero_stat = NodePath("LeftUIBar/GridContainer/HFlowContainer/Heterostat")
+homo_stat = NodePath("LeftUIBar/GridContainer/HFlowContainer/Homostat")
+money_stat = NodePath("RightUIBar/VFlowContainer/Money")
+monthly_expenses_stat = NodePath("RightUIBar/VFlowContainer/MonthExpens")
+day = NodePath("RightUIBar/VFlowContainer/Day")
+week_day = NodePath("RightUIBar/VFlowContainer/WeekDay")
+time_of_day = NodePath("RightUIBar/VFlowContainer/TimeOfDay")
+inventory = NodePath("Game/Control/InventoryUI")
+exit_inventory = NodePath("UpperUIBar/ExitInventory")
+scrollbar = NodePath("Game")
+disclaimer = NodePath("Game/Control/Intro/Disclaimer")
+intro_options = NodePath("Game/Control/Intro/IntroOptions")
+intro = NodePath("Game/Control/Intro/Intro")
+single_bedroom = NodePath("Game/Control/Areas/House/SingleBedroomButtons")
+house_buttons = NodePath("Game/Control/Areas/HouseButtons")
+rick_roll = NodePath("Game/Control/Intro/Disclaimer/VideoStreamPlayer")
+gender_chocie = NodePath("Game/Control/Intro/IntroOptions/GenderChoice")
 name1 = NodePath("Game/Control/Intro/IntroOptions/LineEdit")
-NameConfirmation = NodePath("Game/Control/Intro/IntroOptions/YourName")
+name_confirmation = NodePath("Game/Control/Intro/IntroOptions/YourName")
+demo_scene = NodePath("Game/Control/DemoScene")
 
 [node name="LeftUIBar" type="TextureRect" parent="." unique_id=1268299718]
 layout_mode = 0
@@ -140,23 +141,6 @@ theme_override_font_sizes/font_size = 26
 text = "By EpicPuppygirl09
 "
 
-[node name="Heterostat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=1360879202]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 21
-text = "Heterosexuality:"
-
-[node name="Homostat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=934303775]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "Homosexuality: "
-
-[node name="HornyStat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=1376979593]
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "Hornieness:"
-
 [node name="FemStat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=747338957]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -168,6 +152,23 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 text = "Masculinity: "
+
+[node name="HornyStat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=1376979593]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Hornieness:"
+
+[node name="Heterostat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=1360879202]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
+text = "Heterosexuality:"
+
+[node name="Homostat" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=934303775]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+text = "Homosexuality: "
 
 [node name="BlankSpace2" type="Label" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=917842983]
 layout_mode = 2
@@ -382,7 +383,7 @@ layout_mode = 0
 offset_left = 133.41562
 offset_top = 73.24074
 offset_right = 508.25
-offset_bottom = 323.10184
+offset_bottom = 349.99994
 theme = SubResource("Theme_5vw27")
 
 [node name="Control" type="Control" parent="Game" unique_id=1183575468]
@@ -570,12 +571,21 @@ offset_bottom = 437.3889
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start Game"
 
-[node name="Areas" type="Node2D" parent="Game/Control" unique_id=1380009074 node_paths=PackedStringArray("scrollbar", "singleBedroom", "streaming", "email", "mirror", "trophycase")]
+[node name="Areas" type="Node2D" parent="Game/Control" unique_id=1380009074 node_paths=PackedStringArray("scrollbar", "single_bedroom", "streaming", "videogames", "email", "bathroom", "kitchen", "living_room", "foyer", "house_buttons", "computer", "notepad", "wardrobe", "mirror", "trophycase")]
 script = ExtResource("12_ycdy4")
 scrollbar = NodePath("../..")
-singleBedroom = NodePath("House/SingleBedroomButtons")
-streaming = NodePath("House/BedroomActions/Streaming")
-email = NodePath("House/BedroomActions/Emails")
+single_bedroom = NodePath("House/SingleBedroomButtons")
+streaming = NodePath("House/BedroomActions/ComputerActions/Streaming")
+videogames = NodePath("House/BedroomActions/ComputerActions/VideoGames")
+email = NodePath("House/BedroomActions/ComputerActions/Emails")
+bathroom = NodePath("House/BathroomButtons")
+kitchen = NodePath("House/KitchenButtons")
+living_room = NodePath("House/LivingRoomButtons")
+foyer = NodePath("House/FoyerButtons")
+house_buttons = NodePath("HouseButtons")
+computer = NodePath("House/BedroomActions/ComputerButtons")
+notepad = NodePath("House/BedroomActions/Notepad")
+wardrobe = NodePath("House/BedroomActions/Wardrobe")
 mirror = NodePath("House/BedroomActions/Mirror")
 trophycase = NodePath("House/BedroomActions/Trophycase")
 
@@ -657,9 +667,9 @@ your window folds.
 [node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/SingleBedroomButtons" unique_id=1533013168]
 layout_mode = 0
 offset_left = 97.97186
-offset_top = 124.12036
+offset_top = 69.999985
 offset_right = 947.97186
-offset_bottom = 691.12036
+offset_bottom = 637.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_dg77c")
 
@@ -799,168 +809,6 @@ offset_bottom = 436.4167
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Watch Hypno"
 
-[node name="Streaming" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=1871299090]
-visible = false
-offset_left = 19.728128
-offset_top = 76.157394
-offset_right = 352.72812
-offset_bottom = 529.8611
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You set up your camera and begin
-to think about what you wanna 
-stream for your fans today"
-
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/Streaming" unique_id=2529872]
-layout_mode = 0
-offset_left = 94.29374
-offset_top = 71.62038
-offset_right = 944.29376
-offset_bottom = 638.62036
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("15_0odxb")
-
-[node name="Gaming" type="Button" parent="Game/Control/Areas/House/BedroomActions/Streaming" unique_id=1935960469]
-layout_mode = 0
-offset_left = 105.99687
-offset_top = 205.78705
-offset_right = 201.99689
-offset_bottom = 236.78705
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Stream yourself"
-
-[node name="Camshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/Streaming" unique_id=1537327481]
-layout_mode = 0
-offset_left = 105.99686
-offset_top = 249.21295
-offset_right = 201.99686
-offset_bottom = 280.21295
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Start Camshow"
-
-[node name="Gaming" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=1924742227]
-visible = false
-offset_left = 19.728134
-offset_top = 76.15739
-offset_right = 352.72815
-offset_bottom = 529.8611
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You boot up your favourite game 
-and prepare yourself to have a
-cozy gaming stream with fans."
-
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/Gaming" unique_id=2018720600]
-layout_mode = 0
-offset_left = 94.29374
-offset_top = 71.62038
-offset_right = 944.29376
-offset_bottom = 638.62036
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("15_d13ii")
-
-[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/Gaming" unique_id=1458770898]
-layout_mode = 0
-offset_left = 105.99687
-offset_top = 205.78705
-offset_right = 201.99689
-offset_bottom = 236.78705
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Start the Stream"
-
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/Gaming" unique_id=1084987325]
-layout_mode = 0
-offset_left = 105.99686
-offset_top = 249.21295
-offset_right = 201.99686
-offset_bottom = 280.21295
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Back to Desktop"
-
-[node name="Camshow" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=763728862]
-visible = false
-offset_left = 19.728134
-offset_top = 76.15739
-offset_right = 352.72815
-offset_bottom = 529.8611
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You strike a sexy pose and begin
-to think of all the naughty 
-things you could do on camera."
-
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/Camshow" unique_id=1460018659]
-layout_mode = 0
-offset_left = 94.29374
-offset_top = 71.62038
-offset_right = 2014.2937
-offset_bottom = 1150.6204
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("17_lswn8")
-
-[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/Camshow" unique_id=186048510]
-layout_mode = 0
-offset_left = 105.99687
-offset_top = 205.78705
-offset_right = 201.99689
-offset_bottom = 236.78705
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Start the Show"
-
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/Camshow" unique_id=1050383463]
-layout_mode = 0
-offset_left = 105.99686
-offset_top = 249.21295
-offset_right = 201.99686
-offset_bottom = 280.21295
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Back to Desktop"
-
-[node name="Emails" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=1774917411]
-visible = false
-offset_left = 19.728134
-offset_top = 76.15739
-offset_right = 352.72815
-offset_bottom = 529.8611
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You look through your emails. 
-It's like always mostly promo and
-spam mails."
-script = ExtResource("18_a6jrf")
-
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/Emails" unique_id=1574162071]
-layout_mode = 0
-offset_left = 94.29374
-offset_top = 71.62038
-offset_right = 1064.2937
-offset_bottom = 732.62036
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("16_1u8w0")
-
-[node name="HBoxContainer" type="VBoxContainer" parent="Game/Control/Areas/House/BedroomActions/Emails" unique_id=991367334]
-layout_mode = 0
-offset_left = 4.6812396
-offset_top = 208.37964
-offset_right = 333.0375
-offset_bottom = 322.37964
-
-[node name="Title" type="Label" parent="Game/Control/Areas/House/BedroomActions/Emails/HBoxContainer" unique_id=1134173431]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "From: WeedForLive To: "
-
-[node name="Open" type="Button" parent="Game/Control/Areas/House/BedroomActions/Emails/HBoxContainer" unique_id=1746026792]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Stream yourself"
-
-[node name="Title2" type="Label" parent="Game/Control/Areas/House/BedroomActions/Emails/HBoxContainer" unique_id=1470469672]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "From: WeedForLive To: "
-
-[node name="Open2" type="Button" parent="Game/Control/Areas/House/BedroomActions/Emails/HBoxContainer" unique_id=1899388234]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Play Videogames"
-
 [node name="Notepad" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=200206388]
 visible = false
 offset_left = 19.728134
@@ -1073,7 +921,211 @@ offset_bottom = 437.3889
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start Game"
 
-[node name="Bathroom" type="Label" parent="Game/Control/Areas/House" unique_id=1000462653]
+[node name="ComputerActions" type="Node2D" parent="Game/Control/Areas/House/BedroomActions" unique_id=22773069]
+
+[node name="Streaming" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1871299090]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You set up your camera and begin
+to think about what you wanna 
+stream for your fans today"
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=2529872]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 944.29376
+offset_bottom = 638.62036
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_0odxb")
+
+[node name="Gaming" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1935960469]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 205.78705
+offset_right = 201.99689
+offset_bottom = 236.78705
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Stream yourself"
+
+[node name="Camshow" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Streaming" unique_id=1537327481]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Start Camshow"
+
+[node name="GamingStream" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1924742227]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You boot up your favourite game 
+and prepare yourself to have a
+cozy gaming stream with fans."
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream" unique_id=2018720600]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 944.29376
+offset_bottom = 638.62036
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_d13ii")
+
+[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream" unique_id=1458770898]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 205.78705
+offset_right = 201.99689
+offset_bottom = 236.78705
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Start the Stream"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/GamingStream" unique_id=1084987325]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
+
+[node name="Camshow" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=763728862]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You strike a sexy pose and begin
+to think of all the naughty 
+things you could do on camera."
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=1460018659]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 2014.2937
+offset_bottom = 1150.6204
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("17_lswn8")
+
+[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=186048510]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 205.78705
+offset_right = 201.99689
+offset_bottom = 236.78705
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Start the Show"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Camshow" unique_id=1050383463]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
+
+[node name="VideoGames" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=954355378]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 352.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You boot up your favourite game 
+and prepare yourself to have a
+cozy gaming stream with fans."
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=1517430374]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 944.29376
+offset_bottom = 638.62036
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_d13ii")
+
+[node name="StartStream" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=285228387]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 205.78705
+offset_right = 201.99689
+offset_bottom = 236.78705
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Start the Stream"
+
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/VideoGames" unique_id=1425717447]
+layout_mode = 0
+offset_left = 105.99686
+offset_top = 249.21295
+offset_right = 201.99686
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Desktop"
+
+[node name="Emails" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1774917411 node_paths=PackedStringArray("email_title1", "email_title2")]
+visible = false
+offset_left = 19.728134
+offset_top = 76.15739
+offset_right = 363.72815
+offset_bottom = 529.8611
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "You look through your emails. 
+It's like always mostly promo and
+spam mails."
+script = ExtResource("18_a6jrf")
+email_title1 = NodePath("HBoxContainer/Title")
+email_title2 = NodePath("HBoxContainer/Title2")
+
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails" unique_id=1574162071]
+layout_mode = 0
+offset_left = 94.29374
+offset_top = 71.62038
+offset_right = 1064.2937
+offset_bottom = 732.62036
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_1u8w0")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails" unique_id=991367334]
+layout_mode = 0
+offset_left = 4.6812396
+offset_top = 208.37964
+offset_right = 333.0375
+offset_bottom = 322.37964
+
+[node name="Title" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1134173431]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "From: WeedForLive To: "
+
+[node name="Open" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1746026792]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Stream yourself"
+
+[node name="Title2" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1470469672]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "From: WeedForLive To: "
+
+[node name="Open2" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/Emails/HBoxContainer" unique_id=1899388234]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Play Videogames"
+
+[node name="BathroomButtons" type="Label" parent="Game/Control/Areas/House" unique_id=1000462653]
 visible = false
 offset_left = 8.025009
 offset_top = 52.17592
@@ -1085,7 +1137,7 @@ Morning daylight streams through
 your window folds.
 "
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/Bathroom" unique_id=1775861388]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BathroomButtons" unique_id=1775861388]
 layout_mode = 0
 offset_left = 97.97186
 offset_top = 124.12036
@@ -1094,7 +1146,7 @@ offset_bottom = 691.12036
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("14_w48qg")
 
-[node name="Shower" type="Button" parent="Game/Control/Areas/House/Bathroom" unique_id=1761056970]
+[node name="Shower" type="Button" parent="Game/Control/Areas/House/BathroomButtons" unique_id=1761056970]
 layout_mode = 0
 offset_left = 65.203125
 offset_top = 301.8316
@@ -1105,7 +1157,7 @@ theme_override_colors/font_color = Color(0, 0, 0.8745098, 1)
 theme_override_font_sizes/font_size = 500
 text = "Take a shower"
 
-[node name="Makeup" type="Button" parent="Game/Control/Areas/House/Bathroom" unique_id=1242387419]
+[node name="Makeup" type="Button" parent="Game/Control/Areas/House/BathroomButtons" unique_id=1242387419]
 layout_mode = 0
 offset_left = 97.97186
 offset_top = 356.48145
@@ -1117,7 +1169,7 @@ theme_override_font_sizes/font_size = 500
 text = "Put on Makeup
 "
 
-[node name="MedCabinet" type="Button" parent="Game/Control/Areas/House/Bathroom" unique_id=2113990580]
+[node name="MedCabinet" type="Button" parent="Game/Control/Areas/House/BathroomButtons" unique_id=2113990580]
 layout_mode = 0
 offset_left = 65.203125
 offset_top = 453.70367
@@ -1660,10 +1712,10 @@ layout_mode = 2
 [node name="slot27" parent="Game/Control/InventoryUI/TutorialInventory" unique_id=1882579574 instance=ExtResource("21_getpj")]
 layout_mode = 2
 
-[node name="MyInventory" type="GridContainer" parent="Game/Control/InventoryUI" unique_id=1103845868 node_paths=PackedStringArray("Camera")]
+[node name="MyInventory" type="GridContainer" parent="Game/Control/InventoryUI" unique_id=1103845868 node_paths=PackedStringArray("camera")]
 layout_mode = 2
 script = ExtResource("23_d13ii")
-Camera = NodePath("Camera")
+camera = NodePath("Camera")
 
 [node name="Camera" type="Label" parent="Game/Control/InventoryUI/MyInventory" unique_id=1108567699]
 layout_mode = 2
@@ -1672,7 +1724,6 @@ layout_mode = 2
 layout_mode = 2
 text = "Buy Camera"
 
-[connection signal="EmailName1" from="." to="Game/Control/Areas/House/BedroomActions/Emails" method="_on_main_email_name_1"]
 [connection signal="button_down" from="UpperUIBar/GridContainer/Inventory" to="." method="_on_inventory_button_down"]
 [connection signal="button_down" from="UpperUIBar/ExitInventory" to="." method="_on_exit_inventory_button_down"]
 [connection signal="button_down" from="Game/Control/Intro/Disclaimer/Of legal age" to="." method="_on_of_legal_age_button_down"]
@@ -1697,5 +1748,4 @@ text = "Buy Camera"
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Stream" to="Game/Control/Areas" method="_on_stream_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/VideoGames" to="Game/Control/Areas" method="_on_video_games_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Emails" to="Game/Control/Areas" method="_on_emails_button_down"]
-[connection signal="Cameras" from="Game/Control/InventoryUI/MyInventory" to="Game/Control/Areas" method="_on_my_inventory_cameras"]
 [connection signal="button_down" from="Game/Control/InventoryUI/MyInventory/TestCameraButton" to="Game/Control/InventoryUI/MyInventory" method="_on_test_camera_button_button_down"]
