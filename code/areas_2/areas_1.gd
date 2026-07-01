@@ -182,6 +182,15 @@ func _on_emails_button_down() -> void:
 	email.visible = true
 	computer.visible = false
 	scrollbar.scroll_vertical = 0
-	
 
-	
+
+func _on_porn_button_down() -> void:
+	porn.visible = true
+	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_hypno_button_down() -> void:
+	hypno.visible = true
+	computer.visible = false
+	scrollbar.scroll_vertical = 0

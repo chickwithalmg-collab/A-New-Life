@@ -24,12 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://blwn10wsr7v3k" path="res://assets/sprites/places_1/house_1/porn_stream.webp" id="17_lswn8"]
 [ext_resource type="Texture2D" uid="uid://bknodmxhmj01k" path="res://assets/sprites/places_1/house_1/foyer_1.png" id="17_yaehf"]
 [ext_resource type="Script" uid="uid://dhchjtj64r2hx" path="res://code/areas/house/BedroomActions/emails.gd" id="18_a6jrf"]
-[ext_resource type="PackedScene" uid="uid://jnbeax52n355" path="res://scenes/slot.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" uid="uid://jnbeax52n355" path="res://Scenes/slot.tscn" id="21_getpj"]
 [ext_resource type="Script" uid="uid://5pwmeb5nqcb2" path="res://code/ui/inventory_ui.gd" id="21_ryguw"]
 [ext_resource type="Script" uid="uid://bl6s4t5oqtakn" path="res://code/areas/house/BedroomActions/porn.gd" id="21_ueoa1"]
-[ext_resource type="Texture2D" uid="uid://c6ng7sqaripo7" path="res://assets/sprites/places_1/house_1/pornhub.webp" id="22_6vcvc"]
 [ext_resource type="Script" uid="uid://d3law1db002cd" path="res://code/ui/inventory.gd" id="23_d13ii"]
-[ext_resource type="Texture2D" uid="uid://4l3lmjte153l" path="res://assets/sprites/places_1/house_1/hypnosis_pc.webp" id="23_fv21b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0.6, 0, 0.6, 1)
@@ -575,7 +573,7 @@ offset_bottom = 437.3889
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Start Game"
 
-[node name="Areas" type="Node2D" parent="Game/Control" unique_id=1380009074 node_paths=PackedStringArray("scrollbar", "single_bedroom", "streaming", "gaming_stream", "camshow", "gaming_stream2", "camshow2", "videogames", "email", "porn", "hypno", "bathroom", "kitchen", "living_room", "foyer", "house_buttons", "computer", "notepad", "wardrobe", "mirror", "trophycase")]
+[node name="Areas" type="Node2D" parent="Game/Control" unique_id=1380009074 node_paths=PackedStringArray("scrollbar", "single_bedroom", "streaming", "gaming_stream", "camshow", "gaming_stream2", "camshow2", "videogames", "email", "porn", "bathroom", "kitchen", "living_room", "foyer", "house_buttons", "computer", "notepad", "wardrobe", "mirror", "trophycase")]
 script = ExtResource("12_ycdy4")
 scrollbar = NodePath("../..")
 single_bedroom = NodePath("House/SingleBedroomButtons")
@@ -587,7 +585,6 @@ camshow2 = NodePath("House/BedroomActions/ComputerActions/StreamingActions/Camsh
 videogames = NodePath("House/BedroomActions/ComputerActions/VideoGames")
 email = NodePath("House/BedroomActions/ComputerActions/EmailActions/Emails")
 porn = NodePath("House/BedroomActions/ComputerActions/PornActions/Porn")
-hypno = NodePath("House/BedroomActions/ComputerActions/HypnoActions/Hypno")
 bathroom = NodePath("House/BathroomButtons")
 kitchen = NodePath("House/KitchenButtons")
 living_room = NodePath("House/LivingRoomButtons")
@@ -1273,22 +1270,19 @@ text = "Back to Desktop"
 
 [node name="PornActions" type="Node2D" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=1335854650]
 
-[node name="Porn" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions" unique_id=1212615226 node_paths=PackedStringArray("computer", "porn_site", "scrollbar")]
-visible = false
+[node name="Porn" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions" unique_id=1212615226]
 offset_left = 19.728134
 offset_top = 76.15739
 offset_right = 363.72815
 offset_bottom = 529.8611
 theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You pull your lower garments down 
-and open your favourite porn site 
-in a private tab"
+text = "You look through your emails. 
+It's like always mostly promo and
+spam mails."
 script = ExtResource("21_ueoa1")
-vanilla = Array[String](["uid://cfqawi7n4qn64", "uid://dew4r0tgwgm4h", "uid://dc7km115dyc1m"])
-lesbian = Array[String](["uid://bec6x5fyykip2", "uid://j68jj5bf21xq", "uid://8hn6ebhqp65c"])
-computer = NodePath("../../../ComputerButtons")
-porn_site = NodePath(".")
-scrollbar = NodePath("../../../../../../..")
+vanilla1 = "uid://dsisximf2yhn3"
+vanilla2 = "uid://dt8ugmfng3n1w"
+vanilla = Array[String](["uid://dyj7y6ep4kvu0", "uid://dsisximf2yhn3"])
 
 [node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" unique_id=1974911069]
 layout_mode = 0
@@ -1297,12 +1291,12 @@ offset_top = 71.62038
 offset_right = 1064.2937
 offset_bottom = 732.62036
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("22_6vcvc")
+texture = ExtResource("16_1u8w0")
 
 [node name="GridContainer" type="GridContainer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" unique_id=1684018840]
 layout_mode = 0
-offset_left = -21.065632
-offset_top = 219.07407
+offset_left = -18.72501
+offset_top = 208.37964
 offset_right = 344.07187
 offset_bottom = 338.37964
 columns = 3
@@ -1346,94 +1340,7 @@ theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 theme_override_font_sizes/font_size = 15
 text = "Gangbang Porn"
 
-[node name="GIFPlayer" type="GIFPlayer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" unique_id=1695391849]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" unique_id=1824129444]
-layout_mode = 0
-offset_left = 209.31874
-offset_top = 313.37964
-offset_right = 343.31873
-offset_bottom = 344.37964
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Back to Desktop"
-
-[node name="HypnoActions" type="Node2D" parent="Game/Control/Areas/House/BedroomActions/ComputerActions" unique_id=546553149]
-
-[node name="Hypno" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions" unique_id=54272960]
-offset_left = 19.728134
-offset_top = 76.15739
-offset_right = 352.72815
-offset_bottom = 529.8611
-theme_override_fonts/font = ExtResource("8_5vw27")
-text = "You pull up a website full of 
-hypnosis videos, which one will 
-it be today?"
-
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" unique_id=84428128]
-layout_mode = 0
-offset_left = 94.29374
-offset_top = 71.62038
-offset_right = 1064.2937
-offset_bottom = 732.62036
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_fv21b")
-
-[node name="GridContainer" type="GridContainer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" unique_id=2043529074]
-layout_mode = 0
-offset_left = -21.065632
-offset_top = 219.07407
-offset_right = 344.07187
-offset_bottom = 338.37964
-columns = 3
-
-[node name="VanillaPorn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer" unique_id=1891229273]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0.8745098, 1)
-theme_override_fonts/font = ExtResource("8_5vw27")
-theme_override_font_sizes/font_size = 15
-text = "Vanilla Porn"
-
-[node name="LesbianPorn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer" unique_id=1578309295]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-theme_override_font_sizes/font_size = 15
-text = "Lesbian Porn"
-
-[node name="FetishPorn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer" unique_id=1032063572]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0.8745098, 1)
-theme_override_fonts/font = ExtResource("8_5vw27")
-theme_override_font_sizes/font_size = 15
-text = "Fetish Porn"
-
-[node name="HardcorePorn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer" unique_id=2113920314]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-theme_override_font_sizes/font_size = 15
-text = "Hardcore Porn"
-
-[node name="TransPorn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer" unique_id=382053225]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0.8745098, 1)
-theme_override_fonts/font = ExtResource("8_5vw27")
-theme_override_font_sizes/font_size = 15
-text = "Trans Porn"
-
-[node name="GangbangPorn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer" unique_id=1341137401]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-theme_override_font_sizes/font_size = 15
-text = "Gangbang Porn"
-
-[node name="GIFPlayer" type="GIFPlayer" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" unique_id=881821019]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Vanilla" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions" unique_id=256712386]
+[node name="Vanilla" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions" unique_id=563867296]
 visible = false
 offset_left = 19.728123
 offset_top = 76.157394
@@ -1448,7 +1355,7 @@ trustworthy link below to
 experience things you've never 
 seen before"
 
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Vanilla" unique_id=2144900457]
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Vanilla" unique_id=1824129444]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -1457,7 +1364,7 @@ offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
-[node name="Lesbian" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions" unique_id=1584235650]
+[node name="Lesbian" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions" unique_id=1623912105]
 visible = false
 offset_left = 19.728134
 offset_top = 76.15739
@@ -1472,7 +1379,7 @@ few to receive a massive 40%
 discount on your next purchase
 at DildoFactory!"
 
-[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Lesbian" unique_id=2083892632]
+[node name="GoBackToDesktop" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Lesbian" unique_id=1418258641]
 layout_mode = 0
 offset_left = 105.99686
 offset_top = 249.21295
@@ -2105,8 +2012,6 @@ text = "Buy Camera"
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Stream" to="Game/Control/Areas" method="_on_stream_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/VideoGames" to="Game/Control/Areas" method="_on_video_games_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Emails" to="Game/Control/Areas" method="_on_emails_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Porn" to="Game/Control/Areas" method="_on_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Hypno" to="Game/Control/Areas" method="_on_hypno_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming/GamingStream" to="Game/Control/Areas" method="_on_gaming_stream_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming/Camshow" to="Game/Control/Areas" method="_on_camshow_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream/StartStream" to="Game/Control/Areas" method="_on_start_stream_button_down"]
@@ -2128,14 +2033,7 @@ text = "Buy Camera"
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn/GridContainer/HardcorePorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" method="_on_hardcore_porn_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn/GridContainer/TransPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" method="_on_trans_porn_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn/GridContainer/GangbangPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" method="_on_gangbang_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" method="_on_go_back_to_desktop_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer/VanillaPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_vanilla_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer/LesbianPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_lesbian_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer/FetishPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_fetish_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer/HardcorePorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_hardcore_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer/TransPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_trans_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno/GridContainer/GangbangPorn" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_gangbang_porn_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Vanilla/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_go_back_to_desktop_button_down"]
-[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Lesbian/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Vanilla/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" method="_on_go_back_to_desktop_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Lesbian/GoBackToDesktop" to="Game/Control/Areas/House/BedroomActions/ComputerActions/PornActions/Porn" method="_on_go_back_to_desktop_button_down"]
 [connection signal="cameras" from="Game/Control/InventoryUI/MyInventory" to="Game/Control/Areas" method="_on_my_inventory_cameras"]
 [connection signal="button_down" from="Game/Control/InventoryUI/MyInventory/TestCameraButton" to="Game/Control/InventoryUI/MyInventory" method="_on_test_camera_button_button_down"]

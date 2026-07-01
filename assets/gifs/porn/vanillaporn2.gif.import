@@ -1,0 +1,16 @@
+[remap]
+
+importer="texture_gif"
+importer_version=2
+type="GIFTexture"
+uid="uid://dew4r0tgwgm4h"
+path="res://.godot/imported/vanillaporn2.gif-e3e25f5aa3ee773819730d6327a807aa.res"
+
+[deps]
+
+source_file="res://assets/gifs/porn/vanillaporn2.gif"
+dest_files=["res://.godot/imported/vanillaporn2.gif-e3e25f5aa3ee773819730d6327a807aa.res"]
+
+[params]
+
+storage/compress=true

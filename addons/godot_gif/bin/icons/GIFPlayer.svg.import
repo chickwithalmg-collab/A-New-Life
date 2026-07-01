@@ -2,16 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2rwkwiluy64d"
-path="res://.godot/imported/inventory_slot_empty.svg-ada7ddcbac81d4f480e1c99e70a02e5e.ctex"
+uid="uid://bacv2phf2mlg3"
+path="res://.godot/imported/GIFPlayer.svg-f80b6cdab7976230350c84ec237c6a92.ctex"
 metadata={
+"has_editor_variant": true,
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/inventory_slot_empty.svg"
-dest_files=["res://.godot/imported/inventory_slot_empty.svg-ada7ddcbac81d4f480e1c99e70a02e5e.ctex"]
+source_file="res://addons/godot_gif/bin/icons/GIFPlayer.svg"
+dest_files=["res://.godot/imported/GIFPlayer.svg-f80b6cdab7976230350c84ec237c6a92.ctex"]
 
 [params]
 
@@ -40,4 +41,4 @@ process/size_limit=0
 detect_3d/compress_to=1
 svg/scale=1.0
 editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
+editor/convert_colors_with_editor_theme=true
