@@ -40,14 +40,28 @@ var days = 0
 
 var afab = false
 var amab = false
+var being_trans = false
+var ftm = false
+var nb = false
+var mtf = false
 
 signal email_name1(name)
-
+signal gender_choice1(gender)
+signal trans(transness)
+signal gender_choice2(gender2)
+signal stat1(fem)
+signal stat2(masc)
 func _ready() -> void:
 	name1.text_submitted.connect(_on_lineEdit_text)
-	
-#var OriginName = Name.text
-	
+
+func _process(delta: float) -> void:
+	emit_signal("stat1", feminitiy)
+	emit_signal("stat2", masculinity)
+	fem_stat.text = "Femininity: %0.0f" % [feminitiy]
+	masc_stat.text = "Masculinity: %0.0f" % [masculinity]
+	hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
+	homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
+
 func _on_lineEdit_text(new_text) -> void: 
 	name_confirmation.text = "Your name is:" + new_text
 	
@@ -67,28 +81,30 @@ func _on_afab_button_down() -> void:
 	gender_chocie.visible = false
 	feminitiy += 50
 	afab = true
-	fem_stat.text = "Femininity: %0.0f" % [feminitiy]
-	masc_stat.text = "Masculinity: %0.0f" % [masculinity]
+	#fem_stat.text = "Femininity: %0.0f" % [feminitiy]
+	#masc_stat.text = "Masculinity: %0.0f" % [masculinity]
+	emit_signal("gender_choice1", 0)
 
 func _on_amab_button_down() -> void:
 	gender_chocie.visible = false
 	masculinity += 50
 	amab = true
-	fem_stat.text = "Femininity: %0.0f" % [feminitiy]
-	masc_stat.text = "Masculinity: %0.0f" % [masculinity]
+	#fem_stat.text = "Femininity: %0.0f" % [feminitiy]
+	#masc_stat.text = "Masculinity: %0.0f" % [masculinity]
+	emit_signal("gender_choice1", 1)
 
 
 func _on_sex_button_down() -> void:
 	heterosexuality = 0
 	homosexuality = 0
-	hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
-	homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
+	#hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
+	#homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
 
 func _on_no_sex_button_down() -> void:
 	heterosexuality = -100
 	homosexuality = -100
-	hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
-	homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
+	#hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
+	#homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
 	
 func day_switch():
 	days += 1
@@ -184,3 +200,36 @@ func _on_exit_inventory_button_down() -> void:
 	inventory.visible = false
 	exit_inventory.visible = false
 	scrollbar.scroll_vertical = 0
+
+
+func _on_queer_counseling_office_trans(transness: Variant) -> void:
+	if transness >= 1:
+		being_trans = false
+		print("You're not trans :(")
+		trans.emit(1)
+	else:
+		being_trans = true
+		print("You're trans!")
+		trans.emit(0)
+
+
+func _on_queer_counseling_office_gender_choice_2(gender2: Variant) -> void:
+	if gender2 == 0:
+		emit_signal("gender_choice2", 0)
+		ftm = true
+	if gender2 == 1:
+		emit_signal("gender_choice2", 1)
+		nb = true
+	if gender2 == 2:
+		emit_signal("gender_choice2", 2)
+		mtf = true
+
+
+func _on_hypno_stat_1(fem: Variant) -> void:
+	feminitiy = fem
+	print(feminitiy)
+
+
+func _on_hypno_stat_2(masc: Variant) -> void:
+	masculinity = masc
+	print(masculinity)

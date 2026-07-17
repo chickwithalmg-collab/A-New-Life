@@ -2,8 +2,12 @@ extends Node2D
 
 @export var scrollbar: ScrollContainer
 
+@export var house1: Node2D
+@export var downtown: Node2D
+
 @export var single_bedroom: Label
 
+#Computer Buttons
 @export var streaming: Label
 @export var gaming_stream: Label
 @export var camshow: Label
@@ -14,8 +18,7 @@ extends Node2D
 @export var email: Label
 @export var porn: Label
 @export var hypno: Label
-
-
+#Room Buttons
 @export var bathroom: Label
 @export var kitchen: Label
 @export var living_room: Label
@@ -28,6 +31,12 @@ extends Node2D
 @export var wardrobe: Label
 @export var mirror: Label
 @export var trophycase: Label
+
+#FoyerButtoon
+@export var head_outside: Label
+
+#DowntownButtons
+@export var queer_counseling_office: Node2D
 
 #@export var Inventory: GridContainer
 var camera_number = 0
@@ -193,4 +202,44 @@ func _on_porn_button_down() -> void:
 func _on_hypno_button_down() -> void:
 	hypno.visible = true
 	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_go_back_to_bedroom_button_down() -> void:
+	single_bedroom.visible = true
+	house_buttons.visible = true
+	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+
+
+
+
+func _on_head_outside_button_down() -> void:
+	head_outside.visible = true
+	foyer.visible = false
+	house_buttons.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+
+
+
+func _on_to_counseling_office_button_down() -> void:
+	queer_counseling_office.visible = true
+	downtown.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_to_downtown_button_down() -> void:
+	downtown.visible = true
+	head_outside.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_back_home_button_down() -> void:
+	foyer.visible = true
+	house_buttons.visible = true
+	downtown.visible = false
 	scrollbar.scroll_vertical = 0
