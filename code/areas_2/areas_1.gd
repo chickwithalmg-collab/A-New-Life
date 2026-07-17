@@ -2,14 +2,23 @@ extends Node2D
 
 @export var scrollbar: ScrollContainer
 
+@export var house1: Node2D
+@export var downtown: Node2D
+
 @export var single_bedroom: Label
+
+#Computer Buttons
 @export var streaming: Label
+@export var gaming_stream: Label
+@export var camshow: Label
+@export var gaming_stream2: Label
+@export var camshow2: Label
+
 @export var videogames: Label
 @export var email: Label
 @export var porn: Label
 @export var hypno: Label
-
-
+#Room Buttons
 @export var bathroom: Label
 @export var kitchen: Label
 @export var living_room: Label
@@ -23,9 +32,15 @@ extends Node2D
 @export var mirror: Label
 @export var trophycase: Label
 
+#FoyerButtoon
+@export var head_outside: Label
+
+#DowntownButtons
+@export var queer_counseling_office: Node2D
+
 #@export var Inventory: GridContainer
 var camera_number = 0
-
+var email_name = ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -128,6 +143,7 @@ func _on_trophycase_button_down() -> void:
 func _on_my_inventory_cameras(value: Variant) -> void:
 	camera_number += value
 	print(camera_number)
+	
 func _on_stream_button_down() -> void:
 	if (camera_number >= 1):
 		streaming.visible = true
@@ -139,15 +155,91 @@ func _on_stream_button_down() -> void:
 		computer.visible = true
 
 
-	
-	
+func _on_gaming_stream_button_down() -> void:
+	gaming_stream.visible = true
+	streaming.visible = false
+	scrollbar.scroll_vertical = 0
 
+func _on_camshow_button_down() -> void:
+	camshow.visible = true
+	streaming.visible = false
+	scrollbar.scroll_vertical = 0	
+
+func _on_start_stream_button_down() -> void:
+	gaming_stream.visible = false
+	gaming_stream2.visible = true
+	scrollbar.scroll_vertical = 0	
+
+func _on_start_camshow_button_down() -> void:
+	camshow.visible = false
+	camshow2.visible = true
+	scrollbar.scroll_vertical = 0	
+
+func _on_go_back_to_desktop_button_down() -> void:
+	gaming_stream.visible = false
+	camshow.visible = false
+	gaming_stream2.visible = false
+	camshow2.visible = false
+	videogames.visible = false
+	computer.visible = true
+	scrollbar.scroll_vertical = 0	
 
 func _on_video_games_button_down() -> void:
 	pass # Replace with function body.
 
-
 func _on_emails_button_down() -> void:
 	email.visible = true
 	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_porn_button_down() -> void:
+	porn.visible = true
+	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_hypno_button_down() -> void:
+	hypno.visible = true
+	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_go_back_to_bedroom_button_down() -> void:
+	single_bedroom.visible = true
+	house_buttons.visible = true
+	computer.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+
+
+
+
+func _on_head_outside_button_down() -> void:
+	head_outside.visible = true
+	foyer.visible = false
+	house_buttons.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+
+
+
+func _on_to_counseling_office_button_down() -> void:
+	queer_counseling_office.visible = true
+	downtown.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_to_downtown_button_down() -> void:
+	downtown.visible = true
+	head_outside.visible = false
+	scrollbar.scroll_vertical = 0
+
+
+func _on_back_home_button_down() -> void:
+	foyer.visible = true
+	house_buttons.visible = true
+	downtown.visible = false
 	scrollbar.scroll_vertical = 0

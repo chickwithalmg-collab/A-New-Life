@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://crqhps28hjij2"]
+
+[node name="Checklist" type="GridContainer" unique_id=515249669]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="." unique_id=674299918]
+layout_mode = 2
+text = "Checklist"
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=875333508]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CheckBox" unique_id=758358954]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 95.0
+offset_bottom = 23.0
+text = "Replace all rooms and action pics with selfmade oned"
+
+[node name="CheckBox2" type="CheckBox" parent="." unique_id=985575149]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CheckBox2" unique_id=1233789416]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 95.0
+offset_bottom = 23.0
+text = "Finish all porn and hypno categories"
+
+[node name="CheckBox3" type="CheckBox" parent="." unique_id=2118827886]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CheckBox3" unique_id=115882678]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 95.0
+offset_bottom = 23.0
+text = "Find someone to write all the texts for the game/Get better at doing it myself"
+
+[node name="CheckBox4" type="CheckBox" parent="." unique_id=1881961577]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CheckBox4" unique_id=756698047]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 95.0
+offset_bottom = 23.0
+text = "Implement save system "
+
+[node name="CheckBox5" type="CheckBox" parent="." unique_id=1165664868]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CheckBox5" unique_id=1653137688]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 95.0
+offset_bottom = 23.0
+text = "Implement back and forth buttons "
