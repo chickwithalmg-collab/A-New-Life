@@ -1,5 +1,9 @@
 extends TextureRect
 
+var save_file_path = "user://save/"
+var save_file_name = "MainSave.tres"
+var save_data = SaveData.new()
+
 @export var fem_stat: Label 
 @export var masc_stat: Label
 @export var horny_stat: Label
@@ -14,6 +18,7 @@ extends TextureRect
 
 @export var inventory : PanelContainer
 @export var exit_inventory : Button
+@export var save_system : PopupPanel
 
 @export var scrollbar: ScrollContainer
 @export var disclaimer: Label
@@ -30,7 +35,7 @@ extends TextureRect
 @export var demo_scene: Label
 
 var feminitiy = 0
-var masculinity = 0
+#var masculinity = 0
 var hornieness = 0
 var heterosexuality = 0
 var homosexuality = 0
@@ -53,14 +58,29 @@ signal stat1(fem)
 signal stat2(masc)
 func _ready() -> void:
 	name1.text_submitted.connect(_on_lineEdit_text)
+	verify_safe_directory(save_file_path)
+
+func verify_safe_directory(path: String):
+	DirAccess.make_dir_absolute(path)
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("save"):
+		save()
+	if Input.is_action_just_pressed("load"):
+		load_data()
 	emit_signal("stat1", feminitiy)
-	emit_signal("stat2", masculinity)
+	emit_signal("stat2", save_data.masc_stat)
 	fem_stat.text = "Femininity: %0.0f" % [feminitiy]
-	masc_stat.text = "Masculinity: %0.0f" % [masculinity]
+	masc_stat.text = "Masculinity: %0.0f" % [save_data.masc_stat]
 	hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
 	homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
+
+func load_data():
+	save_data = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	print("loaded")
+func save():
+	ResourceSaver.save(save_data, save_file_path + save_file_name)
+	print("save")
 
 func _on_lineEdit_text(new_text) -> void: 
 	name_confirmation.text = "Your name is:" + new_text
@@ -87,7 +107,7 @@ func _on_afab_button_down() -> void:
 
 func _on_amab_button_down() -> void:
 	gender_chocie.visible = false
-	masculinity += 50
+	save_data.change_masculinity(50)
 	amab = true
 	#fem_stat.text = "Femininity: %0.0f" % [feminitiy]
 	#masc_stat.text = "Masculinity: %0.0f" % [masculinity]
@@ -201,6 +221,8 @@ func _on_exit_inventory_button_down() -> void:
 	exit_inventory.visible = false
 	scrollbar.scroll_vertical = 0
 
+func _on_saves_button_down() -> void:
+	save_system.visible = true
 
 func _on_queer_counseling_office_trans(transness: Variant) -> void:
 	if transness >= 1:
@@ -231,5 +253,5 @@ func _on_hypno_stat_1(fem: Variant) -> void:
 
 
 func _on_hypno_stat_2(masc: Variant) -> void:
-	masculinity = masc
-	print(masculinity)
+	save_data.masc_stat = masc
+	print(save_data.masc_stat)

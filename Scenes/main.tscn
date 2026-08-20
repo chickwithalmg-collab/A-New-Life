@@ -18,9 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://ci28eijw5clh8" path="res://assets/sprites/places_1/house_1/pc_screen.webp" id="15_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cl06umkbjyf6k" path="res://assets/sprites/places_1/house_1/mirror_1.webp" id="15_cegan"]
 [ext_resource type="Texture2D" uid="uid://b4gjdji84ufen" path="res://assets/sprites/places_1/house_1/streamer.webp" id="15_d13ii"]
+[ext_resource type="Script" uid="uid://bfyucqn8xinmm" path="res://code/areas/house/BedroomActions/notepad.gd" id="15_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://fi6jwgruceef" path="res://assets/sprites/places_1/house_1/kitchen_1.jpg" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://cnmulew8igqqf" path="res://assets/sprites/places_1/house_1/emails.jpg" id="16_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://cdekpddwjvo7h" path="res://assets/sprites/places_1/house_1/living_room.jpg" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://v3a4ykp6r27u" path="res://assets/sprites/places_1/house_1/notepad.png" id="16_j8jky"]
 [ext_resource type="Texture2D" uid="uid://blwn10wsr7v3k" path="res://assets/sprites/places_1/house_1/porn_stream.webp" id="17_lswn8"]
 [ext_resource type="Texture2D" uid="uid://bknodmxhmj01k" path="res://assets/sprites/places_1/house_1/foyer_1.png" id="17_yaehf"]
 [ext_resource type="Script" uid="uid://dhchjtj64r2hx" path="res://code/areas/house/BedroomActions/emails.gd" id="18_a6jrf"]
@@ -30,9 +32,10 @@
 [ext_resource type="Texture2D" uid="uid://c6ng7sqaripo7" path="res://assets/sprites/places_1/house_1/pornhub.webp" id="22_6vcvc"]
 [ext_resource type="Script" uid="uid://d3law1db002cd" path="res://code/ui/inventory.gd" id="23_d13ii"]
 [ext_resource type="Texture2D" uid="uid://4l3lmjte153l" path="res://assets/sprites/places_1/house_1/hypnosis_pc.webp" id="23_fv21b"]
-[ext_resource type="Script" uid="uid://dild7eb3j2ouj" path="res://scenes/hypno.gd" id="23_tel4y"]
+[ext_resource type="Script" uid="uid://dild7eb3j2ouj" path="res://code/areas/house/BedroomActions/hypno.gd" id="23_tel4y"]
 [ext_resource type="Texture2D" uid="uid://cifkjskqa2w3s" path="res://assets/sprites/places_1/downtown.jpg" id="29_5q0nq"]
-[ext_resource type="Script" uid="uid://nuei2mssefeh" path="res://scenes/queer_counseling_office.gd" id="29_qkpxi"]
+[ext_resource type="Script" uid="uid://nuei2mssefeh" path="res://code/areas/city/queer_counseling_office.gd" id="29_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://qmils1hk2i20" path="res://assets/sprites/ui/trashcan.png" id="36_kmb1v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
 
@@ -48,7 +51,9 @@ bg_color = Color(0.6, 0, 0.6, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryguw"]
 
-[node name="Main" type="TextureRect" unique_id=161926023 node_paths=PackedStringArray("fem_stat", "masc_stat", "horny_stat", "hetero_stat", "homo_stat", "money_stat", "monthly_expenses_stat", "day", "week_day", "time_of_day", "inventory", "exit_inventory", "scrollbar", "disclaimer", "intro_options", "intro", "single_bedroom", "house_buttons", "rick_roll", "gender_chocie", "name1", "name_confirmation", "demo_scene")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuf3a"]
+
+[node name="Main" type="TextureRect" unique_id=161926023 node_paths=PackedStringArray("fem_stat", "masc_stat", "horny_stat", "hetero_stat", "homo_stat", "money_stat", "monthly_expenses_stat", "day", "week_day", "time_of_day", "inventory", "exit_inventory", "save_system", "scrollbar", "disclaimer", "intro_options", "intro", "single_bedroom", "house_buttons", "rick_roll", "gender_chocie", "name1", "name_confirmation", "demo_scene")]
 offset_right = 641.33124
 offset_bottom = 349.99997
 scale = Vector2(2.9906542, 3.0857143)
@@ -68,6 +73,7 @@ week_day = NodePath("RightUIBar/VFlowContainer/WeekDay")
 time_of_day = NodePath("RightUIBar/VFlowContainer/TimeOfDay")
 inventory = NodePath("Game/Control/InventoryUI")
 exit_inventory = NodePath("UpperUIBar/ExitInventory")
+save_system = NodePath("SaveMenu")
 scrollbar = NodePath("Game")
 disclaimer = NodePath("Game/Control/Intro/Disclaimer")
 intro_options = NodePath("Game/Control/Intro/IntroOptions")
@@ -203,23 +209,6 @@ layout_mode = 2
 text = "                      Restart                    "
 
 [node name="TextureRect" type="TextureRect" parent="LeftUIBar/GridContainer/HFlowContainer/Restart" unique_id=1041078513]
-layout_mode = 0
-offset_left = 59.046757
-offset_top = 1.0000006
-offset_right = 4226.047
-offset_bottom = 4168.0
-scale = Vector2(0.007, 0.007)
-texture = ExtResource("9_efxa6")
-
-[node name="Restart2" type="Button" parent="LeftUIBar/GridContainer/HFlowContainer" unique_id=1849167795]
-visible = false
-layout_mode = 2
-text = "
-
-
-                       Restart                    "
-
-[node name="TextureRect" type="TextureRect" parent="LeftUIBar/GridContainer/HFlowContainer/Restart2" unique_id=1366967166]
 layout_mode = 0
 offset_left = 59.046757
 offset_top = 1.0000006
@@ -394,7 +383,7 @@ layout_mode = 0
 offset_left = 133.41562
 offset_top = 73.24074
 offset_right = 508.25
-offset_bottom = 530.8333
+offset_bottom = 626.1111
 theme = SubResource("Theme_5vw27")
 
 [node name="Control" type="Control" parent="Game" unique_id=1183575468]
@@ -468,6 +457,7 @@ volume_db = -15.0
 expand = true
 
 [node name="IntroOptions" type="Label" parent="Game/Control/Intro" unique_id=36155927]
+visible = false
 offset_left = 12.706249
 offset_top = 75.18519
 offset_right = 377.70624
@@ -604,7 +594,7 @@ foyer = NodePath("House/FoyerButtons")
 house_buttons = NodePath("HouseButtons")
 computer = NodePath("House/BedroomActions/ComputerButtons")
 notepad = NodePath("House/BedroomActions/Notepad")
-wardrobe = NodePath("House/BedroomActions/Wardrobe")
+wardrobe = NodePath("House/BedroomActions/WardrobButons")
 mirror = NodePath("House/BedroomActions/Mirror")
 trophycase = NodePath("House/BedroomActions/Trophycase")
 head_outside = NodePath("House/FoyerActions/HeadOutside")
@@ -792,6 +782,7 @@ offset_top = 205.78705
 offset_right = 201.99689
 offset_bottom = 236.78705
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Stream yourself"
 
 [node name="VideoGames" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerButtons" unique_id=400433919]
@@ -801,6 +792,7 @@ offset_top = 249.21295
 offset_right = 201.99686
 offset_bottom = 280.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Play Videogames"
 
 [node name="Emails" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerButtons" unique_id=1936868066]
@@ -810,6 +802,7 @@ offset_top = 301.71295
 offset_right = 201.99689
 offset_bottom = 332.71295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Check your E-Mails"
 
 [node name="Porn" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerButtons" unique_id=4534486]
@@ -819,6 +812,7 @@ offset_top = 354.21295
 offset_right = 203.99687
 offset_bottom = 385.21295
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Watch Porn"
 
 [node name="Hypno" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerButtons" unique_id=2016048515]
@@ -828,6 +822,7 @@ offset_top = 405.4167
 offset_right = 217.99687
 offset_bottom = 436.4167
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Watch Hypno"
 
 [node name="GoBackToBedroom" type="Button" parent="Game/Control/Areas/House/BedroomActions/ComputerButtons" unique_id=1317283477]
@@ -837,17 +832,21 @@ offset_top = 453.70367
 offset_right = 251.34375
 offset_bottom = 484.70367
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Back to Bedroom"
 
-[node name="Notepad" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=200206388]
-visible = false
+[node name="Notepad" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=200206388 node_paths=PackedStringArray("notepad", "notes", "single_bedroom", "house_buttons", "scrollbar")]
 offset_left = 19.728134
 offset_top = 53.14814
-offset_right = 561.72815
+offset_right = 363.8
 offset_bottom = 786.14813
 theme_override_fonts/font = ExtResource("8_5vw27")
-text = "Looking into the mirror you see your innermost self.
-"
+script = ExtResource("15_dgi5k")
+notepad = NodePath(".")
+notes = NodePath("NotesText")
+single_bedroom = NodePath("../../SingleBedroomButtons")
+house_buttons = NodePath("../../../HouseButtons")
+scrollbar = NodePath("../../../../..")
 
 [node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/Notepad" unique_id=513929421]
 layout_mode = 0
@@ -856,18 +855,28 @@ offset_top = 41.481476
 offset_right = 944.29376
 offset_bottom = 608.48145
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("12_dg77c")
+texture = ExtResource("16_j8jky")
 
-[node name="StartGame" type="Button" parent="Game/Control/Areas/House/BedroomActions/Notepad" unique_id=1208664325]
+[node name="NotesText" type="Label" parent="Game/Control/Areas/House/BedroomActions/Notepad" unique_id=1811571858]
 layout_mode = 0
-offset_left = 105.99687
-offset_top = 406.3889
-offset_right = 201.99689
-offset_bottom = 437.3889
-theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Start Game"
+offset_left = 98.975
+offset_top = 179.21297
+offset_right = 255.975
+offset_bottom = 210.21297
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "Important TODOs"
 
-[node name="Wardrobe" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=1435603163]
+[node name="GoBackToBedroom" type="Button" parent="Game/Control/Areas/House/BedroomActions/Notepad" unique_id=2085582363]
+layout_mode = 0
+offset_left = 110.34375
+offset_top = 342.8704
+offset_right = 251.34375
+offset_bottom = 373.8704
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+theme_override_fonts/font = ExtResource("8_5vw27")
+text = "Back to Bedroom"
+
+[node name="WardrobButons" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=1435603163]
 visible = false
 offset_left = 19.728134
 offset_top = 53.14814
@@ -877,7 +886,7 @@ theme_override_fonts/font = ExtResource("8_5vw27")
 text = "Looking into the mirror you see your innermost self.
 "
 
-[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/Wardrobe" unique_id=244258925]
+[node name="TextureRect" type="TextureRect" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=244258925]
 layout_mode = 0
 offset_left = 94.29374
 offset_top = 41.481476
@@ -886,14 +895,68 @@ offset_bottom = 608.48145
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("12_dg77c")
 
-[node name="StartGame" type="Button" parent="Game/Control/Areas/House/BedroomActions/Wardrobe" unique_id=1652809133]
+[node name="TopClothing" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=1208664325]
+layout_mode = 0
+offset_left = 106.66562
+offset_top = 169.16667
+offset_right = 202.66563
+offset_bottom = 200.16667
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Top Clothing"
+
+[node name="BottomClothing" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=665207944]
 layout_mode = 0
 offset_left = 105.99687
-offset_top = 406.3889
-offset_right = 201.99689
-offset_bottom = 437.3889
+offset_top = 205.78705
+offset_right = 236.99687
+offset_bottom = 236.78705
 theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
-text = "Start Game"
+text = "Bottom Clothing"
+
+[node name="Accessory" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=1366244614]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 249.21295
+offset_right = 244.99687
+offset_bottom = 280.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Accseory"
+
+[node name="Underwear" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=1477742814]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 301.71295
+offset_right = 259.9969
+offset_bottom = 332.71295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Underwear"
+
+[node name="Piercing" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=309492720]
+layout_mode = 0
+offset_left = 105.99687
+offset_top = 354.21295
+offset_right = 203.99687
+offset_bottom = 385.21295
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Piercing"
+
+[node name="Tattoo" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=1141256480]
+layout_mode = 0
+offset_left = 110.34374
+offset_top = 405.41666
+offset_right = 222.34375
+offset_bottom = 436.41666
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Tattoo"
+
+[node name="GoBackToBedroom" type="Button" parent="Game/Control/Areas/House/BedroomActions/WardrobButons" unique_id=87276496]
+layout_mode = 0
+offset_left = 110.343735
+offset_top = 453.70364
+offset_right = 251.34373
+offset_bottom = 484.70364
+theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
+text = "Back to Bedroom"
 
 [node name="Mirror" type="Label" parent="Game/Control/Areas/House/BedroomActions" unique_id=641629481]
 visible = false
@@ -1487,6 +1550,7 @@ theme_override_colors/font_color = Color(0, 0, 1, 0.8666667)
 text = "Back to Desktop"
 
 [node name="Relaxing" type="Label" parent="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions" unique_id=410851892]
+visible = false
 offset_left = 19.728123
 offset_top = 76.157394
 offset_right = 352.72812
@@ -2225,6 +2289,51 @@ layout_mode = 2
 layout_mode = 2
 text = "Buy Camera"
 
+[node name="SaveMenu" type="PopupPanel" parent="." unique_id=920034937]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1720, 880)
+visible = true
+
+[node name="Node2D" type="Node2D" parent="SaveMenu" unique_id=345786532]
+
+[node name="GridContainer" type="GridContainer" parent="SaveMenu/Node2D" unique_id=788960043]
+offset_left = 726.0
+offset_top = 491.0
+offset_right = 1164.0
+offset_bottom = 585.0
+columns = 2
+
+[node name="Save1" type="Button" parent="SaveMenu/Node2D/GridContainer" unique_id=700887012]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_5vw27")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_fuf3a")
+text = " Save "
+
+[node name="DeleteSave1" type="Button" parent="SaveMenu/Node2D/GridContainer" unique_id=1643625221]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_5vw27")
+theme_override_font_sizes/font_size = 70
+text = "  "
+
+[node name="TextureRect" type="TextureRect" parent="SaveMenu/Node2D/GridContainer/DeleteSave1" unique_id=1417204497]
+layout_mode = 0
+offset_right = 103.0
+offset_bottom = 86.0
+texture = ExtResource("36_kmb1v")
+expand_mode = 1
+
+[node name="Save1" type="Button" parent="SaveMenu/Node2D" unique_id=616017892]
+offset_left = 1283.0
+offset_top = 940.0
+offset_right = 1465.0
+offset_bottom = 1026.0
+theme_override_fonts/font = ExtResource("8_5vw27")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_fuf3a")
+text = "Exit"
+
 [connection signal="email_name1" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/EmailActions/Emails" method="_on_main_email_name_1"]
 [connection signal="gender_choice1" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_main_gender_choice_1"]
 [connection signal="gender_choice1" from="." to="Game/Control/Areas/Downtown/QueerCounselingOffice" method="_on_main_gender_choice_1"]
@@ -2232,6 +2341,7 @@ text = "Buy Camera"
 [connection signal="stat1" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_main_stat_1"]
 [connection signal="stat2" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_main_stat_2"]
 [connection signal="trans" from="." to="Game/Control/Areas/House/BedroomActions/ComputerActions/HypnoActions/Hypno" method="_on_main_trans"]
+[connection signal="button_down" from="LeftUIBar/GridContainer/HFlowContainer/Saves" to="." method="_on_saves_button_down"]
 [connection signal="button_down" from="UpperUIBar/GridContainer/Inventory" to="." method="_on_inventory_button_down"]
 [connection signal="button_down" from="UpperUIBar/ExitInventory" to="." method="_on_exit_inventory_button_down"]
 [connection signal="button_down" from="Game/Control/Intro/Disclaimer/Of legal age" to="." method="_on_of_legal_age_button_down"]
@@ -2259,6 +2369,7 @@ text = "Buy Camera"
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Porn" to="Game/Control/Areas" method="_on_porn_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/Hypno" to="Game/Control/Areas" method="_on_hypno_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerButtons/GoBackToBedroom" to="Game/Control/Areas" method="_on_go_back_to_bedroom_button_down"]
+[connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/Notepad/GoBackToBedroom" to="Game/Control/Areas/House/BedroomActions/Notepad" method="_on_go_back_to_bedroom_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming/GamingStream" to="Game/Control/Areas" method="_on_gaming_stream_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/Streaming/Camshow" to="Game/Control/Areas" method="_on_camshow_button_down"]
 [connection signal="button_down" from="Game/Control/Areas/House/BedroomActions/ComputerActions/StreamingActions/GamingStream/StartStream" to="Game/Control/Areas" method="_on_start_stream_button_down"]
