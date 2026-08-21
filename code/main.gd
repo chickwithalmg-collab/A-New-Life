@@ -1,8 +1,8 @@
 extends TextureRect
 
 var save_file_path = "user://save/"
-var save_file_name = "MainSave.tres"
-var save_data = SaveData.new()
+var save_file_name = "save1.ini"
+var save_data = ConfigFile.new()
 
 @export var fem_stat: Label 
 @export var masc_stat: Label
@@ -34,7 +34,7 @@ var save_data = SaveData.new()
 @export var name_confirmation: Label
 @export var demo_scene: Label
 
-var feminitiy = 0
+var femininity = 0
 #var masculinity = 0
 var hornieness = 0
 var heterosexuality = 0
@@ -68,18 +68,28 @@ func _process(delta: float) -> void:
 		save()
 	if Input.is_action_just_pressed("load"):
 		load_data()
-	emit_signal("stat1", feminitiy)
-	emit_signal("stat2", save_data.masc_stat)
-	fem_stat.text = "Femininity: %0.0f" % [feminitiy]
-	masc_stat.text = "Masculinity: %0.0f" % [save_data.masc_stat]
+	emit_signal("stat1", femininity)
+	fem_stat.text = "Femininity: %0.0f" % [femininity]
+	#masc_stat.text = "Masculinity: %0.0f" % [save_data.masc_stat]
 	hetero_stat.text = "Heterosexuality: %0.0f" % [heterosexuality]
 	homo_stat.text = "Homosexuality: %0.0f" % [homosexuality]
 
 func load_data():
-	save_data = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	var save_file = ConfigFile.new()
+	
+	# Load the file from the filesystem
+	var error = save_file.load(save_file_path + save_file_name)
+	
+	# If the file fails to open, stop the function
+	if error != OK:
+		print("Failed to load INI file. Error code: ", error)
+		return
 	print("loaded")
+	femininity = save_file.get_value("stats", "femininity", "0")
 func save():
-	ResourceSaver.save(save_data, save_file_path + save_file_name)
+	save_data.set_value("stats", "femininity", femininity)
+	save_data.save(save_file_path + save_file_name)
+
 	print("save")
 
 func _on_lineEdit_text(new_text) -> void: 
@@ -99,9 +109,9 @@ func _on_not_of_legal_age_button_down() -> void:
 
 func _on_afab_button_down() -> void:
 	gender_chocie.visible = false
-	feminitiy += 50
+	femininity += 50
 	afab = true
-	#fem_stat.text = "Femininity: %0.0f" % [feminitiy]
+	#fem_stat.text = "Femininity: %0.0f" % [femininity]
 	#masc_stat.text = "Masculinity: %0.0f" % [masculinity]
 	emit_signal("gender_choice1", 0)
 
@@ -109,7 +119,7 @@ func _on_amab_button_down() -> void:
 	gender_chocie.visible = false
 	save_data.change_masculinity(50)
 	amab = true
-	#fem_stat.text = "Femininity: %0.0f" % [feminitiy]
+	#fem_stat.text = "Femininity: %0.0f" % [femininity]
 	#masc_stat.text = "Masculinity: %0.0f" % [masculinity]
 	emit_signal("gender_choice1", 1)
 
@@ -248,8 +258,8 @@ func _on_queer_counseling_office_gender_choice_2(gender2: Variant) -> void:
 
 
 func _on_hypno_stat_1(fem: Variant) -> void:
-	feminitiy = fem
-	print(feminitiy)
+	femininity = fem
+	print(femininity)
 
 
 func _on_hypno_stat_2(masc: Variant) -> void:

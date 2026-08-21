@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://na5qrgwnqtmo"
-path="res://.godot/imported/male_symbol.png-d3a69238d7f22ce82e109a8fcd7cc7a1.ctex"
+path="res://.godot/imported/male_symbol.png-58c7aad8e591db38456c6f4de9c6abc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui_1/male_symbol.png"
-dest_files=["res://.godot/imported/male_symbol.png-d3a69238d7f22ce82e109a8fcd7cc7a1.ctex"]
+source_file="res://Assets/Sprites/ui_1/male_symbol.png"
+dest_files=["res://.godot/imported/male_symbol.png-58c7aad8e591db38456c6f4de9c6abc3.ctex"]
 
 [params]
 
