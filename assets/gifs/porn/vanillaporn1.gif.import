@@ -4,12 +4,12 @@ importer="texture_gif"
 importer_version=2
 type="GIFTexture"
 uid="uid://cfqawi7n4qn64"
-path="res://.godot/imported/vanillaporn1.gif-3bc9773dcec001a99deb9be003e8e0ae.res"
+path="res://.godot/imported/vanillaporn1.gif-e51a9655a3a4da8a75c41c0b1b1408a0.res"
 
 [deps]
 
-source_file="res://assets/gifs/porn/vanillaporn1.gif"
-dest_files=["res://.godot/imported/vanillaporn1.gif-3bc9773dcec001a99deb9be003e8e0ae.res"]
+source_file="res://Assets/gifs/porn/vanillaporn1.gif"
+dest_files=["res://.godot/imported/vanillaporn1.gif-e51a9655a3a4da8a75c41c0b1b1408a0.res"]
 
 [params]
 

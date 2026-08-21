@@ -142,8 +142,11 @@ func _on_trophycase_button_down() -> void:
 
 func _on_my_inventory_cameras(value: Variant) -> void:
 	camera_number += value
-	print(camera_number)
-	
+	print(camera_number)	
+
+#Computer Actions------------------
+
+
 func _on_stream_button_down() -> void:
 	if (camera_number >= 1):
 		streaming.visible = true
@@ -211,17 +214,17 @@ func _on_go_back_to_bedroom_button_down() -> void:
 	computer.visible = false
 	scrollbar.scroll_vertical = 0
 
+#Wardrobe Actions------------------
 
 
 
-
+#Outside Actions------------------
 
 func _on_head_outside_button_down() -> void:
 	head_outside.visible = true
 	foyer.visible = false
 	house_buttons.visible = false
 	scrollbar.scroll_vertical = 0
-
 
 
 

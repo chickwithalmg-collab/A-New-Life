@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn0ypsb357jqt"
-path="res://.godot/imported/single_bedroom.jpg-5950900e3f8db108df0627183b450dcb.ctex"
+uid="uid://qmils1hk2i20"
+path="res://.godot/imported/trashcan.png-91d0442cb17b812f37de534a8bee52d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/places_1/house_1/single_bedroom.jpg"
-dest_files=["res://.godot/imported/single_bedroom.jpg-5950900e3f8db108df0627183b450dcb.ctex"]
+source_file="res://Assets/Sprites/UI/trashcan.png"
+dest_files=["res://.godot/imported/trashcan.png-91d0442cb17b812f37de534a8bee52d0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn0ypsb357jqt"
-path="res://.godot/imported/single_bedroom.jpg-5950900e3f8db108df0627183b450dcb.ctex"
+uid="uid://v3a4ykp6r27u"
+path="res://.godot/imported/notepad.png-6570fddf6bfacf8fc4e30f8bf8d75877.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/places_1/house_1/single_bedroom.jpg"
-dest_files=["res://.godot/imported/single_bedroom.jpg-5950900e3f8db108df0627183b450dcb.ctex"]
+source_file="res://Assets/Sprites/places_1/house_1/notepad.png"
+dest_files=["res://.godot/imported/notepad.png-6570fddf6bfacf8fc4e30f8bf8d75877.ctex"]
 
 [params]
 
